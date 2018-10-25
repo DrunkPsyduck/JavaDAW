@@ -1,12 +1,10 @@
 import java.util.Scanner;
 
-public class Ejercicio13 {
+public class Ejercicio14 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/***
-		 * @author mario
-		 */
+		
 		Scanner sc = new Scanner(System.in);
 
 		int numero;
@@ -24,14 +22,27 @@ public class Ejercicio13 {
 				System.out.print("*");
 
 				contador--;
-				
+
 
 			}
 			fila++;
 			System.out.println("\n");
 		}
 
+		fila--;
+		while(fila>0) {
+			contador=1;
+			while( contador<=fila)  {
+				System.out.print("*");
+				contador++;
+			}
+			System.out.println("\n");
+			fila--;
+		}
+
+
 		sc.close();
+
 	}
 
 }
