@@ -20,7 +20,28 @@ public class Ejercicio17 {
 
 		System.out.println("Introduzca el signo");
 		signo = (char) System.in.read();
-
+		
+		switch(caracter){
+		case 'A':
+			calculos=(numero1*2)+(numero2*2);
+			System.out.println("El perimetro del rectangulo es " + calculos);
+			break;
+		case 'B':
+			calculos=numero1*numero2;
+			System.out.println("El area es " + calculos);
+			break;
+		case 'C':
+			calculos = (numero1*numero2)/2;
+			System.out.println("El area del triangulo es" + calculos);
+			break;
+		case 'D':
+			calculos = Math.hypot(numero1, numero2);
+			System.out.println("El valor de la hipotenusa es " + calculos);
+			break;
+		default:
+			System.out.println("No existe esa opción");
+		}
+/*
 		if (signo != '+' && signo != '-' && signo != '*' && signo != '/') {
 			System.out.println("No se puede operar los valores");
 		} else {
@@ -43,7 +64,7 @@ public class Ejercicio17 {
 				}
 			}
 		}
-
+*/
 		sc.close();
 	}
 
