@@ -1,6 +1,7 @@
 
 <p>
-Aquí se encuentran los ejercicios de JAVA secuenciales, condicionales y bucles
+Aquí se encuentran los ejercicios de JAVA secuenciales, condicionales, bucles y Arryas.
 </p>
+"En contrucción"
 
-wiki: https://github.com/DrunkPsyduck/JavaSencillo.wiki.git
+
