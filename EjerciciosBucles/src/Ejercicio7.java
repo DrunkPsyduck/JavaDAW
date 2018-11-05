@@ -7,20 +7,20 @@ public class Ejercicio7 {
 		
 		int numeroVeces;
 		int numero;
-		int guardaValor = 0;
+		int suma = 0;
 		int contador=0;
 		int media;
 		
-		System.out.println("¿Cuantos numeros desea introducir? ");
+		System.out.println("Â¿Cuantos numeros desea introducir? ");
 		numeroVeces=sc.nextInt();
 		
 		while (numeroVeces>contador) {
 			System.out.println("introduzca un numero");
 			numero=sc.nextInt();
-			guardaValor += numero;
+			suma += numero;
 			contador++;			
 		}
-		media=guardaValor/contador;
+		media=suma/contador;
 		System.out.println("La media es " + media);
 		sc.close();
 	}
