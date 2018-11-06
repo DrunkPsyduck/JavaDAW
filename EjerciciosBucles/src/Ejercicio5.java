@@ -10,10 +10,10 @@ public class Ejericio5 {
 		int intervalo;
 		int aux =0;
 		
-		System.out.println("Introduzca un número");
+		System.out.println("Introduzca un nÃºmero");
 		numeroM=sc.nextInt();
 		
-		System.out.println("Introduzca Otro número");
+		System.out.println("Introduzca Otro nÃºmero");
 		numeroN=sc.nextInt();
 		
 		System.out.println("introduzca el intervalo");
