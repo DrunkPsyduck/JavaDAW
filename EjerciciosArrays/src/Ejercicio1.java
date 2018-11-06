@@ -5,41 +5,27 @@ public class Ejercicio1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
-
-		int[] vector;
-		int numeroSuma;
-		int i;
-
+		
+		int vecesSuma;
+		int [] vector;
+		int suma = 0;
+		
+		
 		vector = new int[15];
-
-		for (i = 0; i < vector.length; i++) {
-			System.out.println("introduzca un número " + "(" + i + ")");
+		
+		for (int i = 0; i < vector.length; i++) {
+			System.out.println("Introduzca un numero");
 			vector[i] = sc.nextInt();
-
+			
 		}
-		System.out.println("Indique cuantos numeros desea sumar: ");
-		numeroSuma = sc.nextInt();
-
-		i = 0;
+	
+		System.out.println("¿Cuántos numeros desea sumar? ");
+		vecesSuma = sc.nextInt();
 		
-		/*
-		 * Problema en la suma de los elementos del array.
-		 * Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 15 at
-		 * 		Ejercicio1.main(Ejercicio1.java:24)
-		 */
-		
-		while (i < numeroSuma) {
-			numeroSuma += vector[i];
-			i++;
+		for (int i = 0; i < vecesSuma; i++) {
+			suma += vector[i];
 		}
-
-		System.out.printf("La suma es: %d \n", numeroSuma);
-
-		System.out.println("Contenido del Array: ");
-
-		for (i = 0; i < vector.length; i++) {
-			System.out.print(vector[i] + ", ");
-		}
+		System.out.printf("La suma de los primeros %d números es %d ", vecesSuma, suma );
 		sc.close();
 	}
 
