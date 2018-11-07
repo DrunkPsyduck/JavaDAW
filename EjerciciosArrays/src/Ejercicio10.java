@@ -1,29 +1,57 @@
-import java.util.Scanner;
+
 public class Ejercicio10 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
+
+		int  [] numeros;
+		int aux;
 		
-		int [] numeros;
-		int suma;
 		
 		numeros = new int[10];
-		suma=0;
-		
-		for (int i = 0; i < numeros.length; i++) {
-			System.out.println("Introduzca un numero (" + i + ")" );
-			numeros[i]=sc.nextInt();
+		aux = 0;
 			
+		
+		
+		for (int i = 0; i < numeros.length; i++) {
+			numeros[i] = (int) (Math.random()*100);
 		}
 		
 		for (int i = 0; i < numeros.length; i++) {
-			if (i%2==0) {
-				suma += numeros[i];
-			}
+			System.out.print(numeros[i] + " ");
 		}
-		System.out.printf("La suma de las posiciones pares es 5", suma);
-		sc.close();
+		System.out.println();
+				
+		for (int i = 0; i < numeros.length; i++) {
+			if (i==0) {
+				aux = numeros[9];
+				numeros[9] = numeros[i];
+				numeros[i] = aux;
+			} else if (i==1) {
+				aux = numeros[8];
+				numeros[8] = numeros[i];
+				numeros[i] = aux;
+			} else if (i==2) {
+				aux = numeros[7];
+				numeros[7] = numeros[i];
+				numeros[i] = aux;
+			} else if (i==3) {
+				aux = numeros[6];
+				numeros[6] = numeros[i];
+				numeros[i] = aux;
+			} else if (i==4) {
+				aux = numeros[5];
+				numeros[5] = numeros[i];
+				numeros[i] = aux;
+			}
+			
+			
+			
+			
+			System.out.print(numeros[i] + " ");
+		}
+	
+	
 	}
 
 }

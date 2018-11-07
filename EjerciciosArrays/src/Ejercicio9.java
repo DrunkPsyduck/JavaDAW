@@ -5,27 +5,24 @@ public class Ejercicio9 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		
-		float []numeros;
-		float valorMaximo;
-		int posicion;
-		int posicionMaximo;
+		int [] numeros;
+		int suma;
 		
-		numeros = new float[20];
-		valorMaximo=0;
-		posicionMaximo=0;
+		numeros = new int[10];
+		suma=0;
 		
 		for (int i = 0; i < numeros.length; i++) {
-			System.out.println("Introduzca un número (" + i +")");
-			numeros[i]= sc.nextFloat();
+			System.out.println("Introduzca un numero (" + i + ")" );
+			numeros[i]=sc.nextInt();
+			
 		}
 		
-		for (posicion= 0; posicion < numeros.length; posicion++) {
-			if (numeros[posicion] > valorMaximo) {
-				valorMaximo = numeros[posicion];
-				posicionMaximo = posicion;
+		for (int i = 0; i < numeros.length; i++) {
+			if (i%2==0) {
+				suma += numeros[i];
 			}
 		}
-		System.out.printf("El valor máximo que se encuentra es %f, en la posicion %d", valorMaximo, posicionMaximo);
+		System.out.printf("La suma de las posiciones pares es 5", suma);
 		sc.close();
 	}
 
