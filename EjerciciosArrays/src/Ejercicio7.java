@@ -1,28 +1,39 @@
 
+import java.util.Scanner;
+
 public class Ejercicio7 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		int [] numeros;
-		
-		
-		numeros = new int[] {'+',(Integer) null,(Integer) null,'-','+','+',(Integer) null,(Integer) null,'-','+','+',(Integer) null,(Integer) null,'-','+','+',(Integer) null,(Integer) null,'-','+','+',(Integer) null,(Integer) null,'-','+','+',(Integer) null,(Integer) null,'-','+'};
+		Scanner sc = new Scanner(System.in);
+
+		int[] numeros;
+
+		numeros = new int[30];
+		int contadorNull = 0;
+		int contadorPositivo = 0;
+		int contadorNegativo = 0;
+
 		for (int i = 0; i < numeros.length; i++) {
-			int contadorNull=0;
-			int contadorSuma=0;
-			int contadorResta=0;
-			
-			if (numeros[i]=='+') {
-				contadorSuma++;
-			} else if(numeros[i]=='-') {
-				contadorResta++;
+			// Rango aleatoreos de numeros -100 +100
+			numeros[i] = -100 + (int) (Math.random() * ((100 - (-100)) + 1));
+
+		}
+
+		for (int i = 0; i < numeros.length; i++) {
+
+			if (numeros[i] > 0) {
+				contadorPositivo++;
+			} else if (numeros[i] < 0) {
+				contadorNegativo++;
 			} else {
 				contadorNull++;
 			}
-			System.out.printf("Los nulos son %d \n Los simbolos + son %d \n Los simbolos - son %d ", contadorNull,contadorSuma,contadorResta);
-			
+
 		}
+		System.out.printf("Hay %d nulos. \n Hay %d positivos. \n Hay %d Negativos. ", contadorNull, contadorPositivo,
+				contadorNegativo);
+		sc.close();
 	}
 
 }
