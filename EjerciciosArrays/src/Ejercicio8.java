@@ -15,7 +15,7 @@ public class Ejercicio9 {
 		posicionMaximo=0;
 		
 		for (int i = 0; i < numeros.length; i++) {
-			System.out.println("Introduzca un número (" + i +")");
+			System.out.println("Introduzca un nÃºmero (" + i +")");
 			numeros[i]= sc.nextFloat();
 		}
 		
@@ -25,7 +25,7 @@ public class Ejercicio9 {
 				posicionMaximo = posicion;
 			}
 		}
-		System.out.printf("El valor máximo que se encuentra es %f, en la posicion %d", valorMaximo, posicionMaximo);
+		System.out.printf("El valor mÃ¡ximo que se encuentra es %f, en la posicion %d", valorMaximo, posicionMaximo);
 		sc.close();
 	}
 
