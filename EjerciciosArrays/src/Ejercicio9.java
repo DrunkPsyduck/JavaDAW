@@ -22,7 +22,7 @@ public class Ejercicio9 {
 				suma += numeros[i];
 			}
 		}
-		System.out.printf("La suma de las posiciones pares es 5", suma);
+		System.out.printf("La suma de las posiciones pares es %d", suma);
 		sc.close();
 	}
 
