@@ -1,24 +1,23 @@
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Ejercicio15 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		char caracter = 0;
-		int[] caracteres;
-		int aux = 0;
+
+		//char caracter = 0;
+		char[] caracteres;
 		char enter = 13;
+		int aux = 0;
 
-		caracteres = new int[10];
+		caracteres = new char[10];
 
-		while (caracter != enter && aux < caracteres.length) {
-			System.out.println("Introduzca un carácter: ");
-			caracter = sc.next().charAt(0);
-
-			for (int i = 0; i < caracteres.length; i++) {
-				caracteres[i] = caracter;
+		System.out.println("Introduzca un carácter: (para finalizar pulse ENTER)");
+		while (aux < caracteres.length /*&& caracter != enter*/) {
+			caracteres[aux] = (char) System.in.read();
+			if (caracteres[aux] == enter) {
+				aux = caracteres.length;
+				//break;
 			}
 			aux++;
 		}
@@ -26,14 +25,15 @@ public class Ejercicio15 {
 		for (int i = 0; i < caracteres.length; i++) {
 
 			if (caracteres[i] == 'a' || caracteres[i] == 'e' || caracteres[i] == 'i' || caracteres[i] == 'o'
-					|| caracteres[i] == 'u') {
+					|| caracteres[i] == 'u' || caracteres[i] == 'A' || caracteres[i] == 'E' || caracteres[i] == 'I'
+					|| caracteres[i] == 'O' || caracteres[i] == 'U') {
+				caracteres[i] = '*';
 
-				caracteres[i]='*';
 			}
+			System.out.print(caracteres[i] + " ");
 
-			System.out.print(caracteres[i]);
 		}
-		sc.close();
+
 	}
 
 }
