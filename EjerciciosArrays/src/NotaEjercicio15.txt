@@ -1,2 +1,0 @@
-Cómo no se puede crear un Array indefinido, en su lugar debería ser un ArrayList. De momento y cómo solución temporal
-se creára un Array unidimensional de 20 elementos.
