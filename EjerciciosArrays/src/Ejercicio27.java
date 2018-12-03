@@ -26,7 +26,7 @@ public class Ejercicio27 {
 		do {
 			
 		System.out.println(
-				"Introduzca la opción deseada. No distingue mayúsculas.\nA para imprimir códigos y precios.\nB para buscar un articulo y decir su precio.");
+				"Introduzca la opción deseada. \nA para imprimir códigos y precios.\nB para buscar un articulo y decir su precio.");
 		System.out.println(
 				"C para listar la prenda más cara.\nD para listar las prenda más baratas. \nE Para ordenar las listas de código ");
 		System.out.println("F Borra elementos por su código.\nG calacula las ganancias.\nS para salir.");
@@ -117,8 +117,8 @@ public class Ejercicio27 {
 				if (!(borrar>articulo.length-1 || borrar < 0)) {
 							
 				System.out.printf("El artículo %d con precio %d€ ha sido eliminado",articulo[borrar],precio[borrar]);
-				articulo[borrar]=0;
-				precio[borrar]=0;
+				articulo[borrar-1]=0;
+				precio[borrar-1]=0;
 				
 				} else {
 					System.out.println("El artículo introducido no existe");
@@ -128,7 +128,15 @@ public class Ejercicio27 {
 			
 		case 'g':
 		case 'G':
-			fin = true;
+				int ganancias = 0;
+				
+				for (int i = 0; i < articulo.length; i++) {
+					ganancias = (i+1)*precio[i];
+				}
+				
+				System.out.printf("Se han obtenido unas ganancias de %d€ ",ganancias);
+			
+			fin=true;
 			break;
 			
 		case 's':
