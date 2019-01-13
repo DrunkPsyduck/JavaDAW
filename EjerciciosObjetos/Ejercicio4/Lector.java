@@ -9,13 +9,18 @@ public class Lector {
 		
 	}
 	
-	public int entero() {
-		int lector = sc.nextInt();
+	public long enteroLargo() {
+		long lector = sc.nextLong();
 		return lector;
 	}
 	
 	public String next() {
 		String lector = sc.next();
+		return lector;
+	}
+	
+	public int entero() {
+		int lector = sc.nextInt();
 		return lector;
 	}
 	

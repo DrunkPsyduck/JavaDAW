@@ -14,17 +14,16 @@ public class Tester {
 		Titular titular = new Titular();
 		
 		
-		//crear email.
-//		contacto.setEmail(sc.texto());
-//		
-//		System.out.println(contacto.getEmail());
-//		
-		
 		//crear contacto
-		System.out.println("Crear contacto. Primero telefono");
-		contacto.setNuevoContacto(sc.entero(),sc.next());
+		System.out.println("Crear Contacto. primero tlf luego email");
+		contacto.nuevoContacto(sc.enteroLargo(), sc.next());
+	
 		
-		System.out.println(contacto.mostrar());
+		//Mostrar contactos
+		
+		System.out.println("Muestra contactos");
+		System.out.println(contacto.getContacto());
 	}
-
+		
+	
 }
