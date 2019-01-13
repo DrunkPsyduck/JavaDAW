@@ -9,6 +9,8 @@ public class CirculoTester {
 		System.out.println(circulo.getRadio());
 		System.out.println(circulo.getArea());
 		
+
+		
 		circulo.setRadio(50);
 		
 		System.out.println(circulo.getRadio());

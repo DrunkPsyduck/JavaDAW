@@ -31,4 +31,9 @@ public class Circulo {
 		return area;
 	}
 	
+	public int getPerimetro() {
+		int perimetro = (int) (2 * (Math.PI * radio));
+		return perimetro;
+	}
+	
 }
