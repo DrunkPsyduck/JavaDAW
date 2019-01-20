@@ -10,6 +10,7 @@ public class Practica5a {
 		Punto punto = new Punto(5,8);
 		Lector sc = new Lector();
 		Circulo circulo = new Circulo();
+		Triangulo triangulo = new Triangulo();
 		
 		System.out.println("pruebas punto");
 		System.out.println(punto);
@@ -24,12 +25,14 @@ public class Practica5a {
 		
 		circulo.setRadio(sc.nextDouble());
 		//acirculo.setPunto(punto);
-		System.out.println(punto.getCoordenadasX() + "\n" + punto.getCoordenadasY() + "\n" + circulo.getRadio());
+		System.out.println(circulo);
 		System.out.println("Distancia");
 		System.out.println(circulo.calcularDistanciaDesde(punto));		
 		
 		System.out.println("Area del circulo: " + circulo.calcularArea());
 		System.out.println("Perimetro del circulo: " + circulo.calcularPerimetro());
+		
+		System.out.println(triangulo);
 	}
 
 }

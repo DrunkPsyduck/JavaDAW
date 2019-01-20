@@ -54,13 +54,26 @@ public class Triangulo {
 	
 	public Punto verTriangulo() {
 		Punto triangulo = null;
-		
 			
 		
 		return triangulo;
 	}
 	
 	//calcular perimetro
+	 public double getPerimetro(Punto punto) {
+		 double perimetro;
+		 
+		 perimetro = punto.calcularDistanciaDesde(punto1) + punto.calcularDistanciaDesde(punto2) + punto.calcularDistanciaDesde(punto3);
+		 
+		 
+		 return perimetro;
+	 }
 	
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		StringBuilder sb = new StringBuilder("Punto 1: ");
+		sb.append(punto1).append("\nPunto 2: ").append(punto2).append("\nPunto 3").append(punto3);
+		return sb.toString();
+	}
 }
