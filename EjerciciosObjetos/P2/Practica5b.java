@@ -14,7 +14,11 @@ public class Practica5b {
 		boolean fin = true;
 		String opcion;
 
-		// inicializar asignaturas
+		// inicializar 3 asignaturas
+
+//		for (int i=0; i < 3; i++){
+//			asignatura[i] = new Asignatura();
+//		}
 
 		Asignatura[] id = new Asignatura[3];
 
@@ -31,9 +35,7 @@ public class Practica5b {
 					double calificacion;
 
 
-					identificador = (int) Math.random()*1;
-
-
+					identificador = (int) (Math.random()*5);
 					calificacion = Math.random()*1.0;
 
 					asignatura = new Asignatura(identificador, calificacion);
@@ -75,8 +77,6 @@ public class Practica5b {
 
 		}
 
-		
-		// System.out.println(alumno.getAsignatura1());
 
 	}
 

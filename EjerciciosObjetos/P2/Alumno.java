@@ -38,4 +38,13 @@ public class Alumno {
     public Asignatura getAsignatura3() {
         return asignatura3;
     }
+
+    @Override
+    public String toString() {
+        return "Alumno{" +
+                "asignatura1=" + asignatura1 +
+                ", asignatura2=" + asignatura2 +
+                ", asignatura3=" + asignatura3 +
+                '}';
+    }
 }
