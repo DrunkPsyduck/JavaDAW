@@ -8,7 +8,7 @@ public class Alumno {
     public Alumno(){
         asignatura1 = new Asignatura(1, 5.6);
         asignatura2 = new  Asignatura(2, 10);
-        asignatura3 = new Asignatura(3,5.0);
+        asignatura3 = new Asignatura(3,10.0);
     }
 
     public Alumno(Asignatura asignatura1, Asignatura asignatura2, Asignatura asignatura3){
@@ -24,7 +24,7 @@ public class Alumno {
     }
 
     public Alumno(double asignatura1){
-        this.asignatura1.setCalificacion(); = asignatura1;
+        this.asignatura1.setCalificacion(asignatura1); 
     }
 
     public Asignatura getAsignatura1() {

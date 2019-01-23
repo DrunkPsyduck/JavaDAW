@@ -5,7 +5,7 @@ public class Profesor {
     private Asignatura asignatura;
 
     public Profesor(){
-        asignatura = new Asignatura(3, 5);
+        asignatura = new Asignatura();
     }
 
     public void ponerNotas(){
