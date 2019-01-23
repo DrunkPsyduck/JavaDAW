@@ -3,30 +3,31 @@ package P2;
 public class Profesor {
 
     private Asignatura asignatura;
+    private double suma;
 
     public Profesor(){
-        asignatura = new Asignatura();
+        asignatura = new Asignatura(3, 5);
     }
 
     public void ponerNotas(){
         asignatura = new Asignatura(Math.random()*10);
     }
 
-    public double calcularMedia(){
-        double media = 0;
+    public double getSuma(){
 
-        double matriz[];
+        return suma;
+    }
 
-        matriz = new double[5];
+    public void setCalcularSuma(double calificaciones){
+       suma += calificaciones;
 
-        for (int i=0; i < matriz.length;i++) {
-            matriz[i] = asignatura.getCalificacion();
-        }
+    }
 
-        for (int i=0;i < matriz.length; i++){
-            media += matriz[i];
-        }
-        media /= matriz.length;
+    public double getMedia(){
+        double media;
+
+        media = suma;
+
         return media;
     }
 }

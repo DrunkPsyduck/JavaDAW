@@ -16,7 +16,7 @@ public class Practica5b {
 
 		// inicializar asignaturas
 
-		Asignatura[] id = new Asignatura[5];
+		Asignatura[] id = new Asignatura[3];
 
 		while (fin != false) {
 
@@ -27,25 +27,29 @@ public class Practica5b {
 			case "introducir":
 
 				for (int i = 0; i < id.length; i++) {
-					int identificador = 0;
-					double calificacion = 0;
+					int identificador;
+					double calificacion;
 
-					System.out.println("Identificador");
-					identificador = sc.nextInt();
 
-					System.out.println("Calificacion");
-					calificacion = sc.nextDouble();
+					identificador = (int) Math.random()*1;
+
+
+					calificacion = Math.random()*1.0;
 
 					asignatura = new Asignatura(identificador, calificacion);
 					id[i] = asignatura;
+
+					profesor.setCalcularSuma(calificacion);
 				}
+
 				break;
 
 			case "mostrar":	
 				for (int i = 0; i < id.length; i++) {
 					
 					if (id[i] == null) {
-						System.out.println("No inicializado");
+						System.out.println("Sin información");
+						i = id.length -1;
 					} else {
 						System.out.println(id[i]);
 						System.out.println();
@@ -54,10 +58,10 @@ public class Practica5b {
 				break;
 				
 			case "media":
-				for(int i=0;i<4;i++) {
-					System.out.println(asignatura.getCalificacion());
-				}
-					System.out.println(profesor.calcularMedia());
+
+                System.out.println("Nota media: ");
+                System.out.println(profesor.getMedia() /id.length);
+
 				break;
 				
 			case "salir":
