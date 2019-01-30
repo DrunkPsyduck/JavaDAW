@@ -47,7 +47,8 @@ public class CuentaAhorro extends CuentaCorriente {
 
 	@Override
 	public String toString() {
-		return "CuentaAhorro [interes=" + interes + "\nSaldo: " + saldo + "]";
+		return "CuentaAhorro [interes=" + interes + "]";
 	}
+	
 	
 }

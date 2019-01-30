@@ -1,40 +1,34 @@
 package Ej1;
 
 public class CuentaCorriente {
-	private Titular titular1;
-	private Titular titular2;
-	private Titular titular3;
+	private Titular titular;
+	
 
-	protected String numeroCuenta;
-	protected double saldo;
+	private String numeroCuenta;
+	private double saldo;
 
+	
 	public CuentaCorriente() {
 
 	}
 
 	public CuentaCorriente(Titular titular, String numeroCuenta, double saldo) {
-		titular = new Titular();
+		this.titular = titular;
 		this.numeroCuenta = numeroCuenta;
 		this.saldo = saldo;
 	}
 
 	public CuentaCorriente(Titular titular, String numeroCuenta) {
-		titular = new Titular();
+		this.titular = titular;
 		this.numeroCuenta = numeroCuenta;
 		this.saldo = 15.3;
 	}
 
-	public Titular getTitular1() {
-		return titular1;
+	public Titular getTitular() {
+		return titular;
 	}
 
-	public Titular getTitular2() {
-		return titular2;
-	}
-
-	public Titular getTitular3() {
-		return titular3;
-	}
+	
 
 	public String getNumeroCuenta() {
 		return numeroCuenta;
@@ -67,19 +61,15 @@ public class CuentaCorriente {
 	public Titular cuenta(){
 		
 		
-		return titular1;
+		return titular;
 	}
 
 	@Override
 	public String toString() {
-		
-		StringBuilder sb = new StringBuilder("Cuenta Corriente: ");
-		sb.append(titular1).append("\nNumero cuenta: ").append(numeroCuenta).append("\nSaldo: ").append(saldo);
-		
-		return sb.toString();
-	
+		return "CuentaCorriente [titular=" + titular + ", numeroCuenta=" + numeroCuenta + ", saldo=" + saldo + "]";
 	}
 
-
+	
+	
 	
 }

@@ -1,5 +1,7 @@
 package Ej1;
 
+import java.util.Arrays;
+
 public class Tester {
 
 	public static void main(String[] args) {
@@ -7,89 +9,119 @@ public class Tester {
 
 		CuentaCorriente cc = new CuentaCorriente();
 		CuentaAhorro ca = new CuentaAhorro();
-		Titular titular = new Titular();
 		Lector sc = new Lector();
-		//declaración variables para ménu
+		// declaración variables para ménu
 		boolean fin = false;
 		String seleccion;
-		String cuenta;
-		
-		System.out.println(cc);
-		System.out.println("_________________");
-		System.out.println(ca);
-		System.out.println("_________________");
-		System.out.println(titular);
-		
-		
+		// String cuenta;
+
+		Titular titularCuenta[] = null;
+		CuentaCorriente cuentas[] = null;
+		CuentaAhorro cuentaAhorro[] = null;
+
 		while (!fin) {
-		
-			
-			System.out.println("Introduzca la opción deseada");
+
+			System.out.println(
+					"¿Que operación desea realizar?\nNuevo " + " \nSaldo\nIngreso\nReintegro\nInteres\nTitular\nSalir");
 			seleccion = sc.next();
-			
-			
-			switch(seleccion.toLowerCase()) {
-			
+
+			switch (seleccion.toLowerCase()) {
+
 			case "nuevo":
 
-				
 				System.out.println("¿Cuántas cuentas desea crear?");
-					int numero = sc.nextInt();
+				int numero = sc.nextInt();
+
+				titularCuenta = new Titular[numero];
+				cuentas = new CuentaCorriente[numero];
+
+				for (int i = 0; i < titularCuenta.length; i++) {
+					System.out.println("Introduzca el nombre");
+					String nombre = sc.next();
+					System.out.println("Introduzca los apellidos");
+					String apellidos = sc.next();
+					System.out.println("Introduzca la edad");
+					int edad = sc.nextInt();
+
+					titularCuenta[i] = new Titular(nombre, apellidos, edad);
+
+				}
+
+				for (int i = 0; i < cuentas.length; i++) {
+					System.out.println("¿Cuenta corriente o cuenta Ahorro?");
+					String tipo = sc.next();
 					
-					Titular titularCuenta[] = new Titular[numero];
-					CuentaCorriente cuentas[] = new CuentaCorriente[numero];
-					
-					for (int i = 0; i < titularCuenta.length; i++) {
-						System.out.println("Introduzca el nombree, los apellidos y la edad");
-						
-						String nombre = sc.next();
-						String apellidos = sc.nextLine();
-						int edad = sc.nextInt();
-						
-						titularCuenta[i] = new Titular(nombre, apellidos, edad);
-						
+					if (tipo.equalsIgnoreCase("corriente")) {
+					cuentas[i] = new CuentaCorriente(titularCuenta[i], cc.getNumeroCuenta(), 0);
+					} else {
+					cuentas[i] = new CuentaAhorro(titularCuenta[i], cc.getNumeroCuenta(), 2.5);
 					}
-					
-					for (int i = 0; i < cuentas.length; i++) {
-						
-						
-						
-						cuentas[i] = new CuentaCorriente(titularCuenta[i], "" );
-					}
-				break;
+				}
+
+//				Casting de un array a otro						
+//				if (cuentas[0].getClass().getSimpleName().equals("CuentaAhorro")) {
+//					//((CuentaAhorro)cuentas[0]).
+//					CuentaAhorro x= ((CuentaAhorro)cuentas[0]);
+//				}
 				
+
+//				System.out.println("¿Desea introducir dinero?");
+//				String sel = sc.next();
+//
+//				if (sel.equalsIgnoreCase("si")) {
+//					System.out.println("Introduzca la cantidad");
+//					double ingreso = sc.nextDouble();
+//					cc.setSaldo(ingreso);
+//				}
+
+				break;
+
 			case "saldo":
-				
+
 				System.out.println(cc.getSaldo());
+				System.out.println("Dispone de " + cc.getSaldo() + "€");
 				break;
-				
+
 			case "ingreso":
 				System.out.println("Cuanto desea ingresar");
-				
+
 				double nuevoSaldo = sc.nextDouble();
-				cc.setSaldo(nuevoSaldo);
+				cc.setSaldo(cc.getSaldo() + nuevoSaldo);
+				System.out.println("Dispone de " + cc.getSaldo() + "€");
 				break;
-				
+
 			case "reintegro":
-				System.out.println("¿Cuanto desea retirar?");
-				
-				double reintegro = sc.nextDouble();
-				reintegro = cc.reintegro(reintegro);
-				System.out.println(reintegro);
+
+				if (cc.getSaldo() <= 0) {
+					System.out.println(" No dispone de saldo.");
+				} else {
+					System.out.println("¿Cuanto desea retirar?");
+					double reintegro = sc.nextDouble();
+					reintegro = cc.reintegro(reintegro);
+					System.out.println("Le quedan en la cuenta " + reintegro);
+				}
+
 				break;
-				
-			case "salir": 
-				
+
+			case "salir":
+
 				fin = true;
 				break;
+
+			case "interes":
+
+				System.out.println(ca);
+
+				break;
+			case "titular":
+				break;
+
 			default:
 				System.out.println("No valido");
 			}
-			
+
 		}
-			
-		
-		
+
 	}
 
 }

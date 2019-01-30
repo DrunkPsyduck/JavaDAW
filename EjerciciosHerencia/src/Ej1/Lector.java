@@ -21,19 +21,19 @@ public class Lector {
 		String lector;
 		
 		lector = sc.nextLine();
-		sc.close(); 
+	 
 		return lector;
 	}
 	
 	public int nextInt() {
 		int lector;
-		lector = nextInt();
+		lector = sc.nextInt();
 		return lector;
 	}
 	
-	public int nextDouble() {
-		int lector;
-		lector = nextDouble();
+	public double nextDouble() {
+		double lector;
+		lector = sc.nextDouble();
 		return lector;
 	}
 }
