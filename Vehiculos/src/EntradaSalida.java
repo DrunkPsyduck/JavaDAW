@@ -15,7 +15,7 @@ public class EntradaSalida {
         return lector;
     }
 
-    public double lesctorDouble() {
+    public double lectorDouble() {
         Scanner sc = new Scanner(System.in);
 
         double lector = sc.nextDouble();

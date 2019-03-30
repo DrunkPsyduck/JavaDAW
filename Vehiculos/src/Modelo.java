@@ -20,10 +20,8 @@ public class Modelo {
 
     @Override
     public String toString() {
-        return "Modelo{" +
-                "marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", fechaSalidaMercado='" + fechaSalidaMercado + '\'' +
-                '}';
+      StringBuilder sb = new StringBuilder();
+      sb.append("Marca: ").append(marca).append(" Modelo: ").append(modelo).append(" fecha lanzamiento: ").append(fechaSalidaMercado);
+      return sb.toString();
     }
 }

@@ -30,14 +30,13 @@ public abstract class Vehiculo {
     //public abstract void informacionVehiculo(String matricula, int potencia, double precio, Modelo modelo, String tipo);
 
 
+
     @Override
     public String  toString() {
-        return "Vehiculo{" +
-                "matricula='" + matricula + '\'' +
-                ", potencia=" + potencia +
-                ", modelo=" + modelo +
-                ", precioAlquiler=" + precioAlquiler +
-                ", tipo='" + tipo + '\'' +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(matricula).append("\nPotencia: ").append(potencia).append(" Modelo: ").append(modelo).append(" Precio alquiler: ").append(precioAlquiler)
+                .append("  Tipo combustible: ").append(tipo).append("\n");
+        return sb.toString();
     }
 }

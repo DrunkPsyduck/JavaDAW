@@ -5,36 +5,70 @@ public class Tester {
 
         empresa.mostrarMensaje();
 
-        System.out.print("nuevo coche o autobus\n>");
-        String vehiculo =  es.lectorNombre();
+        empresa.inicializarArray();
+        empresa.rellenarArray();
 
-        if (vehiculo.equalsIgnoreCase("coche")){
-            System.out.println("Introduzca matricula");
-            String matricula = es.lectorNombre();
-            System.out.println("potencia");
-            int potencia = es.lectorEnteros();
-            System.out.println("marca");
-            String marca = es.lectorNombre();
-            System.out.println("modelos");
-            String modelo = es.lectorNombre();
-            System.out.println("fecha lanzamiento");
-            String fechaLanzamiento = es.lectorNombre();
-            System.out.println("Precio del alquiler");
-            double precioAlquiler = es.lesctorDouble();
-            System.out.println("Combustible");
-            String combustible = es.lectorNombre();
-            System.out.println("color");
-            String color = es.lectorNombre();
 
-            empresa.nuevoCoche(matricula,potencia,precioAlquiler, combustible, color, marca, modelo, fechaLanzamiento);
+        boolean fin = false;
+        while (!false) {
+            System.out.println("1. Mostrar datos\n2. introducir un nuevo vehiculo\n3. Eliminar vehiculos\n4. Busqueda por combustible\n5. Actualizar potencia"
+                    + "\n6. Lista de vehiculos ordenada\n7. Consulta de autobuses por capacidad\n99. salir ");
+            int selector = es.lectorEnteros();
 
-        } else if (vehiculo.equalsIgnoreCase("autobus")){
+            switch (selector) {
+                case 1:
+                    System.out.println("mostrar datos");
+                    System.out.println(empresa);
 
-        } else {
-            System.out.println("buuuuu");
+                    break;
+                case 2:
+                    System.out.print("Introduzca el tipo de vehiculo\n>");
+                    String vehiculo = es.lectorNombre();
+
+                    if (vehiculo.equalsIgnoreCase("coche") || vehiculo.equalsIgnoreCase("autobus")) {
+                        empresa.introducirDatos(es, vehiculo);
+
+                    } else {
+                        System.out.println("buuuuu");
+                    }
+                    break;
+                case 3:
+                    System.out.println("eliminar vehiculos");
+                    System.out.println("introduzca la matricula");
+                    String matricula = es.lectorNombre();
+                    empresa.eliminarVehiculo(matricula);
+                    break;
+                case 4:
+                    System.out.println("consulta por combustible");
+                    System.out.println("Busca vehiculos diesel o gasolina?");
+                    String combustible = es.lectorNombre();
+                    empresa.busquedaCombustible(combustible);
+                    break;
+                case 5:
+                    // actualizar potencia vehiculo
+                    System.out.println("introduzca la matricula");
+                    matricula = es.lectorNombre();
+
+                    if (empresa.busquedaVehiculo(matricula) == true) {
+                        System.out.println("¿Cuanta potencia desea poner?");
+                        int potencia = es.lectorEnteros();
+                        empresa.actualizarPotencia(matricula, potencia);
+                    } else
+
+                        break;
+                case 6:
+                    //listado ordenado por matricula
+                    empresa.ordenarPorMatricula();
+                    break;
+                case 7:
+                    //consulta autobuses por capacidad introducida
+                    break;
+                case 99:
+                    fin = true;
+                    break;
+                default:
+                    System.out.println("no válido");
+            }
         }
-
-        System.out.println(empresa);
-
     }
 }
