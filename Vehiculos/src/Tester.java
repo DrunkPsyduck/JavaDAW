@@ -18,35 +18,35 @@ public class Tester {
             switch (selector) {
                 case 1:
                     System.out.println("mostrar datos");
-                    System.out.println(empresa);
+                    empresa.mostrarDatos();
 
                     break;
                 case 2:
-                    System.out.print("Introduzca el tipo de vehiculo\n>");
+                    System.out.print("Introduzca el tipo de vehículo\n>");
                     String vehiculo = es.lectorNombre();
 
                     if (vehiculo.equalsIgnoreCase("coche") || vehiculo.equalsIgnoreCase("autobus")) {
                         empresa.introducirDatos(es, vehiculo);
 
                     } else {
-                        System.out.println("buuuuu");
+                        System.out.println("No se reconoce el tipo de vehículo");
                     }
                     break;
                 case 3:
-                    System.out.println("eliminar vehiculos");
-                    System.out.println("introduzca la matricula");
+                    System.out.println("Eliminar vehículos");
+                    System.out.println("Introduzca la matricula");
                     String matricula = es.lectorNombre();
                     empresa.eliminarVehiculo(matricula);
                     break;
                 case 4:
-                    System.out.println("consulta por combustible");
-                    System.out.println("Busca vehiculos diesel o gasolina?");
+                    System.out.println("Consulta por combustible");
+                    System.out.println("¿Busca vehiculos diesel o gasolina?");
                     String combustible = es.lectorNombre();
                     empresa.busquedaCombustible(combustible);
                     break;
                 case 5:
                     // actualizar potencia vehiculo
-                    System.out.println("introduzca la matricula");
+                    System.out.println("Introduzca la matricula");
                     matricula = es.lectorNombre();
 
                     if (empresa.busquedaVehiculo(matricula) == true) {
@@ -62,12 +62,17 @@ public class Tester {
                     break;
                 case 7:
                     //consulta autobuses por capacidad introducida
+                    empresa.ordenarAutobusesCapacidad();
+                    break;
+                case 0:
+                    System.out.println("array rellenado con datos por defecto");
+                    empresa.rellenarArray();
                     break;
                 case 99:
                     fin = true;
                     break;
                 default:
-                    System.out.println("no válido");
+                    System.out.println("No válido");
             }
         }
     }

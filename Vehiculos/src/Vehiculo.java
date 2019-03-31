@@ -1,15 +1,13 @@
 public abstract class Vehiculo {
-
     protected String matricula;
     protected int potencia;
-
     protected Modelo modelo;
     protected double precioAlquiler;
     protected String tipo; //combustible
 
 
     public Vehiculo() {
-        matricula = "0000bbb";
+        matricula = "0000qaa";
         potencia = 520;
         precioAlquiler = 120;
         tipo = "Gasolina";

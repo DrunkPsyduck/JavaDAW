@@ -28,9 +28,9 @@ public class EmpresaAlquiler {
 
         for (int i = 0; i < vehiculos.length / 2; i++) {
             if (i % 2 == 0) {
-                vehiculos[i] = new Coche("1234qwe", 90, new Modelo("BMW", "M5", "2016"), 50, "gasolina", "azul");
+                vehiculos[i] = new Coche("0000aaa", 90, new Modelo("BMW", "M5", "2016"), 50, "gasolina", "azul");
             } else {
-                vehiculos[i] = new Autobus("222ppl", 150, new Modelo("marca", "modelos", "fechaSalida"), 120, "diesel", 55);
+                vehiculos[i] = new Autobus("0001aaa", 150, new Modelo("DRS", "mig", "fechaSalida"), 120, "diesel", 55);
             }
         }
         System.out.println("Aplicación lista para funcionar");
@@ -43,6 +43,19 @@ public class EmpresaAlquiler {
             } else {
                 System.out.println("No se ha podido crear el vehiculo seleccionado");
             }
+        }
+    }
+
+    public String generarMatricula(){
+        String matricula = "0000aaa";
+        matricula = String.valueOf(Integer.parseInt(matricula)+1);
+        return matricula;
+    }
+
+    public void mostrarDatos(){
+        for (int i = 0; i < vehiculos.length; i++) {
+            if (vehiculos[i]!=null)
+                System.out.println(vehiculos[i]);
         }
     }
 
@@ -156,7 +169,7 @@ public class EmpresaAlquiler {
 
         for (int i = 0; i < vehiculos.length; i++) {
             for (int j = i + 1; j < vehiculos.length - 1; j++) {
-                if (vehiculos[i] != null && vehiculos[j] != null && vehiculos[j].matricula.compareToIgnoreCase(vehiculos[j + 1].matricula) == 1) {
+                if (vehiculos[j] != null && vehiculos[j+1] != null && vehiculos[j].matricula.compareToIgnoreCase(vehiculos[j+1].matricula) == 1) {
                     aux[j] = vehiculos[j + 1];
                     vehiculos[j + 1] = vehiculos[j];
                     vehiculos[j] = aux[j];
@@ -165,7 +178,8 @@ public class EmpresaAlquiler {
         }
 
         for (int i = 0; i < vehiculos.length; i++) {
-            System.out.println(vehiculos[i]);
+            if (vehiculos[i] != null)
+                System.out.println(vehiculos[i]);
         }
     }
 
@@ -182,13 +196,15 @@ public class EmpresaAlquiler {
         aux = new Vehiculo[cont];
 
         for (int i = 0; i < vehiculos.length; i++) {
-            aux[i] = vehiculos[i];
+            if (vehiculos[i] != null) {
+                aux[i] = vehiculos[i];
+            }
         }
 
         for (int i = 0; i < vehiculos.length; i++) {
             if (i % 3 == 0) {
-                for (int j = 0; j < vehiculos.length; j++) {
-                    if (vehiculos[i] != null && vehiculos[j] != null && vehiculos[j].matricula.compareToIgnoreCase(vehiculos[j + 1].matricula) == 1) {
+                for (int j = 0; j < vehiculos.length - 1; j++) {
+                    if (vehiculos[j] != null && vehiculos[j + 1] != null && vehiculos[j] instanceof Autobus ) {
                         aux[j] = vehiculos[j + 1];
                         vehiculos[j + 1] = vehiculos[j];
                         vehiculos[j] = aux[j];
@@ -197,15 +213,12 @@ public class EmpresaAlquiler {
             }
         }
         for (int i = 0; i < vehiculos.length; i++) {
-            System.out.println(vehiculos[i]);
+            if (vehiculos[i] != null)
+                System.out.println(vehiculos[i]);
         }
     }
 
-    @Override
-    public String toString() {
-        return "EmpresaAlquiler{" +
-                "vehiculos=" + Arrays.toString(vehiculos) +
-                "}\n";
+
     }
 
 }

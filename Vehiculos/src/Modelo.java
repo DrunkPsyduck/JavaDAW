@@ -21,7 +21,7 @@ public class Modelo {
     @Override
     public String toString() {
       StringBuilder sb = new StringBuilder();
-      sb.append("Marca: ").append(marca).append(" Modelo: ").append(modelo).append(" fecha lanzamiento: ").append(fechaSalidaMercado);
+      sb.append(marca).append(" Modelo: ").append(modelo).append(" Fecha lanzamiento: ").append(fechaSalidaMercado);
       return sb.toString();
     }
 }
