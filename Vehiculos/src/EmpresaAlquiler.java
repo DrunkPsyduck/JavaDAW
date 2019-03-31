@@ -46,15 +46,15 @@ public class EmpresaAlquiler {
         }
     }
 
-    public String generarMatricula(){
+    public String generarMatricula() {
         String matricula = "0000aaa";
-        matricula = String.valueOf(Integer.parseInt(matricula)+1);
+        matricula = String.valueOf(Integer.parseInt(matricula) + 1);
         return matricula;
     }
 
-    public void mostrarDatos(){
+    public void mostrarDatos() {
         for (int i = 0; i < vehiculos.length; i++) {
-            if (vehiculos[i]!=null)
+            if (vehiculos[i] != null)
                 System.out.println(vehiculos[i]);
         }
     }
@@ -169,7 +169,7 @@ public class EmpresaAlquiler {
 
         for (int i = 0; i < vehiculos.length; i++) {
             for (int j = i + 1; j < vehiculos.length - 1; j++) {
-                if (vehiculos[j] != null && vehiculos[j+1] != null && vehiculos[j].matricula.compareToIgnoreCase(vehiculos[j+1].matricula) == 1) {
+                if (vehiculos[j] != null && vehiculos[j + 1] != null && vehiculos[j].matricula.compareToIgnoreCase(vehiculos[j + 1].matricula) == 1) {
                     aux[j] = vehiculos[j + 1];
                     vehiculos[j + 1] = vehiculos[j];
                     vehiculos[j] = aux[j];
@@ -204,7 +204,7 @@ public class EmpresaAlquiler {
         for (int i = 0; i < vehiculos.length; i++) {
             if (i % 3 == 0) {
                 for (int j = 0; j < vehiculos.length - 1; j++) {
-                    if (vehiculos[j] != null && vehiculos[j + 1] != null && vehiculos[j] instanceof Autobus ) {
+                    if (vehiculos[j] != null && vehiculos[j + 1] != null && vehiculos[j] instanceof Autobus) {
                         aux[j] = vehiculos[j + 1];
                         vehiculos[j + 1] = vehiculos[j];
                         vehiculos[j] = aux[j];
@@ -217,8 +217,7 @@ public class EmpresaAlquiler {
                 System.out.println(vehiculos[i]);
         }
     }
-
-
-    }
-
+    
 }
+
+
