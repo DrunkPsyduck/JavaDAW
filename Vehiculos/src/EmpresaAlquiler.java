@@ -187,7 +187,7 @@ public class EmpresaAlquiler {
 
         Vehiculo aux[];
         int cont = 0;
-        for (int i = 0; i < vehiculos.length; i++) {
+        for (int i = 0; i < vehiculos.length ; i++) {
             if (vehiculos[i] != null) {
                 cont++;
             }
@@ -195,7 +195,7 @@ public class EmpresaAlquiler {
 
         aux = new Vehiculo[cont];
 
-        for (int i = 0; i < vehiculos.length; i++) {
+        for (int i = 0; i < vehiculos.length ; i++) {
             if (vehiculos[i] != null) {
                 aux[i] = vehiculos[i];
             }
@@ -213,7 +213,7 @@ public class EmpresaAlquiler {
             }
         }
         for (int i = 0; i < vehiculos.length; i++) {
-            if (vehiculos[i] != null)
+            if (vehiculos[i] != null && vehiculos[i] instanceof Autobus)
                 System.out.println(vehiculos[i]);
         }
     }
