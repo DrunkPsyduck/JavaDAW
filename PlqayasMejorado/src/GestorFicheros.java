@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GestorFicheros {
 
@@ -35,4 +36,35 @@ public class GestorFicheros {
             salida.writeObject(gestor.playas);
         }
     }
+
+    public static void escribirFichero(ArrayList<Playas> lista) throws IOException{
+        File ficheroPlano= new File(ficheroPlayasTexto);
+        PrintWriter pw = new PrintWriter(ficheroPlano);
+
+        for (int i = 0; i < lista.size(); i++) {
+            pw.println(lista.get(i).toString());
+        }
+        pw.close();
+    }
+
+    public static ArrayList<Playas> leerFicheroTexto() throws IOException, FileNotFoundException{
+
+        File archivo = new File(ficheroPlayasTexto);
+
+        ArrayList<Playas> al = new ArrayList<>();
+        Scanner lector = new Scanner(archivo);
+
+        while (lector.hasNext()){
+            String cadena = lector.nextLine();
+            String [] trozos = cadena.split(";");
+
+            if (trozos[0].equalsIgnoreCase("C")){
+                String nombre = trozos[1];
+                /* todos los constructores /*/
+            }
+
+        }
+        return al;
+    }
+
 }
