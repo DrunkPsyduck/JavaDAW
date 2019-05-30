@@ -3,7 +3,8 @@ package ejemploproyectotxt;
 import java.util.TreeSet;
 
 
-public class PlayaGrande extends Playa {
+public class
+PlayaGrande extends Playa {
     private String bandera;
 
     public PlayaGrande(String nombre,double longitud,String bandera) {

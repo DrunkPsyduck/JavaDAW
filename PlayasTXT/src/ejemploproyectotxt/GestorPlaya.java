@@ -28,6 +28,7 @@ public class GestorPlaya {
             }
         }
     }
+
     public void eliminarPlaya(String nombre){
 
         Iterator<Playa> it =  lista.iterator();
@@ -42,7 +43,7 @@ public class GestorPlaya {
 
         Iterator<Playa> it =  lista.iterator();
         while(it.hasNext()){
-            System.out.println(it.next());;
+            System.out.println(it.next());
         }
     }
 
