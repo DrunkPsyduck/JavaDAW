@@ -1,7 +1,6 @@
+# Curso finalizado.
+### En este repositorio se encuentran los ejercicios básicos realizados durante el módulo de programación integrado en el ciclo formativo de Desarrollo de Aplicaciones Web
 
-<p>
-Aquí se encuentran los ejercicios de JAVA secuenciales, condicionales, bucles y Arryas.
-</p>
-"En construcción"
-
+La dificultad de los ejercicios fue progresiva.
+Al estar terminado el curso, no recibira más actualizaciónes de código y solo se actualizara el README con la intencion de aclarar la función de este repositorio.
 
